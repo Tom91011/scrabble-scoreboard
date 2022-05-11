@@ -8,5 +8,5 @@ import { faPhone, faLocationPin } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   faPhone = faPhone
-  faLocationPin = faLocationPin
+  faLocationPin = faLocationPin  
 }
