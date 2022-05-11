@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { TableComponent } from './container/table/table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import { TableComponent } from './container/table/table.component';
     TableComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
