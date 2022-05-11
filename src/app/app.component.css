@@ -1,0 +1,19 @@
+.top-row, .table-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    margin: 20px;
+    padding: 30px;    
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.top-row__container {
+    width: calc(100%/3);
+}
+
+.table-container__container {
+    width: 100%;
+}
