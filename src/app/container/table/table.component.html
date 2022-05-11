@@ -5,46 +5,11 @@
         <th>Games Played</th>
         <th>Total Score</th>
     </tr>
-    <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
+    <tr *ngFor="let player of gameData; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{player.PlayerId}}</td>
+        <td>{{player.GamesPlayed}}</td>
+        <td>{{player.TotalScore}}</td>
     </tr>
     <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
-    </tr>
-    <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
-    </tr>
-    <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
-    </tr>
-    <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
-    </tr>
-    <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
-    </tr>
-    <tr>
-        <td>1.</td>
-        <td>Karl Kruger</td>
-        <td>9</td>
-        <td>700</td>
-    </tr>
 </table>
