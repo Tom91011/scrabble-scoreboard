@@ -63,7 +63,7 @@ export class TableComponent implements AfterViewInit {
 
   displayedColumns: string[] = [
     'position', 
-    'playerName',
+    'name',
     'totalScore', 
     'gamesPlayed'
   ];
@@ -73,8 +73,7 @@ export class TableComponent implements AfterViewInit {
 
   @ViewChild(MatSort)  sort!: MatSort;  
 
-  ngAfterViewInit() { this.gameData.sort = this.sort; console.log(this.gameData);
-   }
+  ngAfterViewInit() { this.gameData.sort = this.sort }
 
   ngOnInit() {      
     GAME_DATA.sort((a:any,b:any) => { return b.totalScore - a.totalScore })
