@@ -6,12 +6,12 @@
     class="mat-elevation-z8">
 
       <!-- Position Column -->
-  <!-- <ng-container matColumnDef="position">
-    <th>
-      Position
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.playerId}} </td>
-  </ng-container> -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by position">
+          Position
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="playerId">

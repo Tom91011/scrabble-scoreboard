@@ -10,6 +10,7 @@ interface Player {
 }
 
 interface Game {
+  position: number,
   playerId: number,
   totalScore: number,
   gamesPlayed: Number
@@ -61,7 +62,7 @@ const GAME_DATA: PeriodicElement[] = [
 export class TableComponent implements AfterViewInit {
   players: Player[] = playersData
 
-  displayedColumns: string[] = ['playerId', 'totalScore', 'gamesPlayed'];
+  displayedColumns: string[] = ['position', 'playerId', 'totalScore', 'gamesPlayed'];
   gameData = new MatTableDataSource(GAME_DATA);
 
   constructor() {}
@@ -72,5 +73,9 @@ export class TableComponent implements AfterViewInit {
 
   ngOnInit() {      
     GAME_DATA.sort((a:any,b:any) => { return b.totalScore - a.totalScore })
+    GAME_DATA.forEach((player:any, index:number) => {
+      player.position = index + 1
+      return player
+    })
   }
 }
