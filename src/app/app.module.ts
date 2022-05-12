@@ -5,6 +5,8 @@ import { ContainerComponent } from './container/container.component';
 import { TableComponent } from './container/table/table.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTableModule } from '@angular/material/table'  
+import { MatSortModule } from '@angular/material/sort';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MatTableModule } from '@angular/material/table'
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

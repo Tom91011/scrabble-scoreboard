@@ -1,8 +1,9 @@
 import playersData  from '../../players.json'
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+
 
 interface Player {
   PlayerId: Number;
@@ -10,46 +11,46 @@ interface Player {
 }
 
 interface Game {
-  PlayerId: number,
-  TotalScore: number,
-  GamesPlayed: Number
+  playerId: number,
+  totalScore: number,
+  gamesPlayed: Number
 }
 
 export interface PeriodicElement {
-  PlayerId: number;
-  TotalScore: number;
-  GamesPlayed: number;
+  playerId: number;
+  totalScore: number;
+  gamesPlayed: number;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const GAME_DATA: PeriodicElement[] = [
   {
-    PlayerId: 5,
-    TotalScore: 410,
-    GamesPlayed: 16
+    playerId: 5,
+    totalScore: 410,
+    gamesPlayed: 16
   }, {
-    PlayerId: 2,
-    TotalScore: 640,
-    GamesPlayed: 15
+    playerId: 2,
+    totalScore: 640,
+    gamesPlayed: 15
   }, {
-    PlayerId: 6,
-    TotalScore: 200,
-    GamesPlayed: 9
+    playerId: 6,
+    totalScore: 200,
+    gamesPlayed: 9
   }, {
-    PlayerId: 1,
-    TotalScore: 700,
-    GamesPlayed: 9
+    playerId: 1,
+    totalScore: 700,
+    gamesPlayed: 9
   }, {
-    PlayerId: 4,
-    TotalScore: 150,
-    GamesPlayed: 9
+    playerId: 4,
+    totalScore: 150,
+    gamesPlayed: 9
   }, {
-    PlayerId: 3,
-    TotalScore: 50,
-    GamesPlayed: 3
+    playerId: 3,
+    totalScore: 50,
+    gamesPlayed: 3
   }, {
-    PlayerId: 6,
-    TotalScore: 300,
-    GamesPlayed: 8
+    playerId: 7,
+    totalScore: 300,
+    gamesPlayed: 8
   }
 ];
 
@@ -61,32 +62,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableComponent implements AfterViewInit {
   players: Player[] = playersData
 
-  displayedColumns: string[] = ['playerName', 'gamesPlayed', 'totalScore'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['playerId', 'totalScore', 'gamesPlayed'];
+  gameData = new MatTableDataSource(GAME_DATA);
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
-  @ViewChild(MatSort)
-  sort: MatSort = new MatSort;
+  @ViewChild(MatSort)  sort!: MatSort;  
 
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+  ngAfterViewInit() { this.gameData.sort = this.sort; }
+
+  ngOnInit() {      
   }
-
-    /** Announce the change in sort state for assistive technology. */
-    announceSortChange(sortState: Sort) {
-      // This example uses English messages. If your application supports
-      // multiple language, you would internationalize these strings.
-      // Furthermore, you can customize the message to add additional
-      // details about the values being sorted.
-      if (sortState.direction) {
-        this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-      } else {
-        this._liveAnnouncer.announce('Sorting cleared');
-      }
-    }  
-
-  ngOnInit() {
-  }
-
 }
