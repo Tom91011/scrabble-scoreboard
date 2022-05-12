@@ -1,5 +1,4 @@
 import playersData  from '../../players.json'
-import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -65,12 +64,13 @@ export class TableComponent implements AfterViewInit {
   displayedColumns: string[] = ['playerId', 'totalScore', 'gamesPlayed'];
   gameData = new MatTableDataSource(GAME_DATA);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor() {}
 
   @ViewChild(MatSort)  sort!: MatSort;  
 
   ngAfterViewInit() { this.gameData.sort = this.sort; }
 
   ngOnInit() {      
+    GAME_DATA.sort((a:any,b:any) => { return b.totalScore - a.totalScore })
   }
 }
