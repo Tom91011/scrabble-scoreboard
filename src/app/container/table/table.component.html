@@ -1,9 +1,4 @@
-<!-- <table mat-table [dataSource]="dataSource" matSort  -->
-
-<table mat-table [dataSource]="gameData" matSort 
-  
-
-    class="mat-elevation-z8">
+<table mat-table [dataSource]="gameData" matSort class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container matColumnDef="position">
@@ -18,19 +13,21 @@
           element.position == 2 || 
           element.position == 3 "
          [ngClass]="{ 
-           'trophy-gold' : (element.position == 1), 'trophy-silver' : (element.position == 2), 'trophy-bronze' : (element.position == 3)}
-          ">
+           'trophy-gold' : (element.position == 1), 
+           'trophy-silver' : (element.position == 2), 
+           'trophy-bronze' : (element.position == 3)
+          }">
       </fa-icon> 
     </td>
   </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
-        Player Name
-      </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Player Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
 
   <!-- Games played Column -->
   <ng-container matColumnDef="gamesPlayed">
@@ -39,7 +36,6 @@
     </th>
     <td mat-cell *matCellDef="let element"> {{element.gamesPlayed}} </td>
   </ng-container>
-
 
   <!-- Score Column -->
   <ng-container matColumnDef="totalScore">
