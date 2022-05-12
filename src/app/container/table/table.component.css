@@ -2,3 +2,15 @@ table {
     width: 100%;
     text-align: left;
 }
+
+.trophy-gold {
+    color: rgb(236,153,75);
+}
+
+.trophy-silver {
+    color: rgb(192,192,192)
+}
+
+.trophy-bronze {
+    color: rgb(176,141,87)
+}

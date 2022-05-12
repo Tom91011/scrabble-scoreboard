@@ -5,13 +5,24 @@
 
     class="mat-elevation-z8">
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by position">
-          Position
-        </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by position">
+      Position
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}}
+      <fa-icon 
+        [icon]="faTrophy" 
+        *ngIf="
+          element.position == 1 || 
+          element.position == 2 || 
+          element.position == 3 "
+         [ngClass]="{ 
+           'trophy-gold' : (element.position == 1), 'trophy-silver' : (element.position == 2), 'trophy-bronze' : (element.position == 3)}
+          ">
+      </fa-icon> 
+    </td>
+  </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="playerId">

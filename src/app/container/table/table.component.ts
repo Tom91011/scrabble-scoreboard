@@ -2,6 +2,7 @@ import playersData  from '../../players.json'
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Player {
@@ -61,6 +62,7 @@ const GAME_DATA: PeriodicElement[] = [
 })
 export class TableComponent implements AfterViewInit {
   players: Player[] = playersData
+  faTrophy = faTrophy  
 
   displayedColumns: string[] = ['position', 'playerId', 'totalScore', 'gamesPlayed'];
   gameData = new MatTableDataSource(GAME_DATA);
