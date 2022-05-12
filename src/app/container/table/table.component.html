@@ -30,19 +30,19 @@
   </ng-container>
 
   <!-- Games played Column -->
-  <ng-container matColumnDef="gamesPlayed">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gamesPlayed">
+  <ng-container matColumnDef="GamesPlayed">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by GamesPlayed">
       Games Played
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.gamesPlayed}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.GamesPlayed}} </td>
   </ng-container>
 
   <!-- Score Column -->
-  <ng-container matColumnDef="totalScore">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by totalScore">
+  <ng-container matColumnDef="TotalScore">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by TotalScore">
       Total Score
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.totalScore}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.TotalScore}} </td>
   </ng-container>
   
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
