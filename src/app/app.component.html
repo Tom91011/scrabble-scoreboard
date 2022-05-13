@@ -1,29 +1,24 @@
 <div class="top-row">
   <app-container class="top-row__container container">
-    <h1>Do you love Scrabble?</h1>
-    <p>This is just some placeholder text about scrabble. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <h2 class="container__title">Do you love Scrabble?</h2>
+    <p class="container__content">This is just some placeholder text about scrabble. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. </p>
   </app-container>
-  <app-container class="top-row__container container">
-    <div>
-      <fa-icon [icon]="faPhone"></fa-icon>
-      <h2>Call us</h2>
-      <p>We are available 9am - 5pm</p>
-      <p><strong>0115 123 4569</strong></p>
-    </div>
-  </app-container>
-  <app-container class="top-row__container container">
-    <div>
-      <fa-icon [icon]="faLocationPin"></fa-icon>
-      <h2>Find us</h2>
-      <p>123 Fake Street, Someplace, Nottingham, NG1 2TR</p>
-      <p><strong>Open in maps</strong></p>
-    </div>
-  </app-container>
+  <div class="top-row__cards-container cards-container">
+    <app-container *ngFor="let card of cards" class="top-row__card-container container">
+      <app-card class="container__card">      
+        <fa-icon class="container__card-icon" [icon]="card.icon"></fa-icon>
+        <div class="container__card-info">
+          <h3 class="container__card-title">{{card.title}}</h3>      
+          <p class="container__card-content">{{card.content}}</p>      
+          <a class="container__card-link" href={{card.link}}>{{card.link}}</a> 
+        </div>     
+      </app-card>
+    </app-container>
+  </div>
 </div>
-<div class="table-container">
-  
+<div class="table-container">  
   <app-container class="table-container__container container">
-    <h1>Results</h1>
+    <h2>Results</h2>
     <app-table></app-table>
   </app-container>
 </div>

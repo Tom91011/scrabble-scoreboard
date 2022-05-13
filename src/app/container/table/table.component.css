@@ -1,6 +1,7 @@
 table {
     width: 100%;
     text-align: left;
+    margin-top: 20px;
 }
 
 .trophy-gold {
@@ -13,4 +14,30 @@ table {
 
 .trophy-bronze {
     color: rgb(176,141,87)
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    border-bottom: 1px solid rgb(220,220,220);
+    width: 25%;
+}
+
+th.mat-header-cell {
+    background-color: rgb(220,220,220);
+}
+
+tr.mat-header-row {
+    height: 70px;
+}
+
+/* reset header weight to normal so the selected header goes bold */
+th {
+    font-weight: normal;
+}
+
+::ng-deep .mat-sort-header-sorted {
+    font-weight: 700
+}
+
+.active {
+    font-weight: 700;
 }

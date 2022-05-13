@@ -7,13 +7,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatTableModule } from '@angular/material/table'  
 import { MatSortModule } from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './container/card/card.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    TableComponent
+    TableComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
