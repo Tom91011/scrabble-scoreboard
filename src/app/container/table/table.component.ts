@@ -18,6 +18,7 @@ export interface PeriodicElement {
 
 let GAME_DATA: PeriodicElement[] = []
 
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -29,13 +30,18 @@ export class TableComponent implements AfterViewInit {
   players: Player[] = playersData
   faTrophy = faTrophy  
   gameData:any
-  
+  activeColumn = ""
   displayedColumns: string[] = [
     'position', 
     'name',
     'GamesPlayed',
     'TotalScore', 
   ];
+  // Click event - when a column clicked the active column changes, and the respective cells in that row get the 'active' class added on
+  toggleActiveColumn(event: any) {
+    const clickedColumn = event.target.innerText
+    this.activeColumn = clickedColumn
+  }
 
   constructor(private http: HttpClient) {}
 
