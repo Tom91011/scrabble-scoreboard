@@ -15,7 +15,7 @@ export class AppComponent {
     {
       icon: faPhone,
       title: "Call us",
-      content: "We are available 9am - 5pm",
+      content: "We are available by phone 9am - 5pm",
       link: "0115 123 4567"
     }, {
       icon: faLocationPin,

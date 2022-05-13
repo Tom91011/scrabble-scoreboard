@@ -1,20 +1,22 @@
 <div class="top-row">
   <app-container class="top-row__container container">
-    <h1>Do you love Scrabble?</h1>
-    <p>This is just some placeholder text about scrabble. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+    <h2 class="container__title">Do you love Scrabble?</h2>
+    <p class="container__content">This is just some placeholder text about scrabble. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. </p>
   </app-container>
   <app-container *ngFor="let card of cards" class="top-row__container container">
-    <app-card class="container__card">
-      <fa-icon [icon]="card.icon"></fa-icon>
-      <h2>{{card.title}}</h2>
-      <p>{{card.content}}</p>      
-      <a href={{card.link}}>{{card.link}}</a>      
+    <app-card class="container__card">      
+      <fa-icon class="container__card-icon" [icon]="card.icon"></fa-icon>
+      <div class="container__card-info">
+        <h3 class="container__card-title">{{card.title}}</h3>      
+        <p class="container__card-content">{{card.content}}</p>      
+        <a class="container__card-link" href={{card.link}}>{{card.link}}</a> 
+      </div>     
     </app-card>
   </app-container>
 </div>
 <div class="table-container">  
   <app-container class="table-container__container container">
-    <h1>Results</h1>
+    <h2>Results</h2>
     <app-table></app-table>
   </app-container>
 </div>
