@@ -33,8 +33,8 @@ export class TableComponent implements AfterViewInit {
   displayedColumns: string[] = [
     'position', 
     'name',
+    'GamesPlayed',
     'TotalScore', 
-    'GamesPlayed'
   ];
 
   constructor(private http: HttpClient) {}
