@@ -1,11 +1,11 @@
 <table mat-table [dataSource]="gameData" matSort class="mat-elevation-z8">
 
-  <!-- Position Column -->
+  <!-- Position Column - Adds the applicable trophy and assigns gold/silver/bronze class-->
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by position">
       Position
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}}
+    <td mat-cell *matCellDef="let element"> {{element.position}}.
       <fa-icon 
         [icon]="faTrophy" 
         *ngIf="

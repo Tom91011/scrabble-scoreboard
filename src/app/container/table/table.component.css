@@ -4,7 +4,6 @@ table {
     margin-top: 20px;
 }
 
-
 .trophy-gold {
     color: rgb(236,153,75);
 }
@@ -35,6 +34,6 @@ th {
     font-weight: normal;
 }
 
-.mat-sort-header-sorted {
+::ng-deep .mat-sort-header-sorted {
     font-weight: 700
 }
