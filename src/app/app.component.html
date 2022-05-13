@@ -3,16 +3,18 @@
     <h2 class="container__title">Do you love Scrabble?</h2>
     <p class="container__content">This is just some placeholder text about scrabble. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. </p>
   </app-container>
-  <app-container *ngFor="let card of cards" class="top-row__container container">
-    <app-card class="container__card">      
-      <fa-icon class="container__card-icon" [icon]="card.icon"></fa-icon>
-      <div class="container__card-info">
-        <h3 class="container__card-title">{{card.title}}</h3>      
-        <p class="container__card-content">{{card.content}}</p>      
-        <a class="container__card-link" href={{card.link}}>{{card.link}}</a> 
-      </div>     
-    </app-card>
-  </app-container>
+  <div class="top-row__cards-container cards-container">
+    <app-container *ngFor="let card of cards" class="top-row__card-container container">
+      <app-card class="container__card">      
+        <fa-icon class="container__card-icon" [icon]="card.icon"></fa-icon>
+        <div class="container__card-info">
+          <h3 class="container__card-title">{{card.title}}</h3>      
+          <p class="container__card-content">{{card.content}}</p>      
+          <a class="container__card-link" href={{card.link}}>{{card.link}}</a> 
+        </div>     
+      </app-card>
+    </app-container>
+  </div>
 </div>
 <div class="table-container">  
   <app-container class="table-container__container container">
